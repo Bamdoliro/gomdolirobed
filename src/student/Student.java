@@ -1,12 +1,26 @@
 package student;
 
+import java.util.ArrayList;
+
 public class Student {
     private String name; // 이름
     private String tel; // 전화번호
     private String nativeSC; // 출신 중학교
     private int score; // 성적
     private int attendance; // 출결
-    private int point; // 가산점
+    private int point; // 가산
+    private ArrayList<Student> studentData = new ArrayList<>();
+
+    public Student() {}
+
+    public Student(String name, String tel, String nativeSC, int score, int attendance, int point) {
+        this.name = name;
+        this.tel = tel;
+        this.nativeSC = nativeSC;
+        this.score = score;
+        this.attendance = attendance;
+        this.point = point;
+    }
 
     public void setData(String name, String tel, String nativeSC, int score, int attendance, int point) {
         this.name = name;
@@ -15,6 +29,8 @@ public class Student {
         this.score = score;
         this.attendance = attendance;
         this.point = point;
+        Student setStudentData = new Student(name, tel, nativeSC, score, attendance, point);
+        studentData.add(setStudentData);
     }
 
     public String getName() {
