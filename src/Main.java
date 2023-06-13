@@ -1,13 +1,16 @@
+import school.School;
+import student.Student;
+
 public class Main {
     public static void main(String[] args) {
 
         // TODO-0 데이터 생성
         // 부산소프트웨어마이스터고등학교를 생성합니다.
-
+        School bssm = new School();
         // 밤돌중학교를 다니고 있는 이밤돌 학생을 생성합니다.
-
+        Student leebamdol = new Student();
         // 곰돌중학교를 다니고 있는 금곰돌 학생을 생성합니다.
-
+        Student geumgomdol = new Student();
 
         // TODO-1 이밤돌 학생 원서
         // 이밤돌 학생이 부산소프트웨어마이스터고등학교에 낼 원서를 작성합니다.
