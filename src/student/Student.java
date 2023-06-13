@@ -8,6 +8,15 @@ public class Student {
     private int attendance; // 출결
     private int point; // 가산점
 
+    public void setData(String name, String tel, String nativeSC, int score, int attendance, int point) {
+        this.name = name;
+        this.tel = tel;
+        this.nativeSC = nativeSC;
+        this.score = score;
+        this.attendance = attendance;
+        this.point = point;
+    }
+
     public String getName() {
         return name;
     }
