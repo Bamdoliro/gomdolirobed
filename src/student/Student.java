@@ -9,12 +9,13 @@ public class Student {
     private int score; // 성적
     private int attendance; // 출결
     private int point; // 가산
-    private boolean submit = false;
+    private boolean submit = false; // 제출 여부
+    private boolean pass = false; // 합불 여부
     private ArrayList<Student> studentData = new ArrayList<>();
 
     public Student() {}
 
-    public Student(String name, String tel, String nativeSC, int score, int attendance, int point) {
+    public Student(String name, String tel, String nativeSC, int score, int attendance, int point, boolean pass) {
         this.name = name;
         this.tel = tel;
         this.nativeSC = nativeSC;
@@ -30,7 +31,7 @@ public class Student {
         this.score = score;
         this.attendance = attendance;
         this.point = point;
-        Student setStudentData = new Student(name, tel, nativeSC, score, attendance, point);
+        Student setStudentData = new Student(name, tel, nativeSC, score, attendance, point, pass);
         studentData.add(setStudentData);
     }
 
@@ -102,6 +103,14 @@ public class Student {
         this.submit = submit;
     }
 
+    public boolean isPass() {
+        return pass;
+    }
+
+    public void setPass(boolean pass) {
+        this.pass = pass;
+    }
+
     @Override
     public String toString() {
         return "Name: " + name +
@@ -110,5 +119,15 @@ public class Student {
                 ", Score: " + score +
                 ", Attendance: " + attendance +
                 ", Point: " + point;
+    }
+
+    public String toStringPass() {
+        return "Name: " + name +
+                ", Tel: " + tel +
+                ", NativeSC: " + nativeSC +
+                ", Score: " + score +
+                ", Attendance: " + attendance +
+                ", Point: " + point +
+                ", Pass: " + pass;
     }
 }
