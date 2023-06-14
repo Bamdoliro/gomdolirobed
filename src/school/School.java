@@ -8,6 +8,6 @@ public class School {
     static ArrayList<Student> studentsData = new ArrayList<>();
 
     public static void submit(ArrayList<Student> obj) {
-        studentsData.addAll(obj);
+        if (obj != null) studentsData.addAll(obj);
     }
 }

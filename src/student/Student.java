@@ -9,6 +9,7 @@ public class Student {
     private int score; // 성적
     private int attendance; // 출결
     private int point; // 가산
+    private boolean submit = false;
     private ArrayList<Student> studentData = new ArrayList<>();
 
     public Student() {}
@@ -34,7 +35,15 @@ public class Student {
     }
 
     public ArrayList<Student> getData() {
-        return studentData;
+        if (!submit) {
+            submit = true;
+            return studentData;
+        }
+        else {
+            System.out.println(getName() + "님 이미 제출하였습니다.");
+            return null;
+        }
+
     }
 
     public String getName() {
@@ -83,6 +92,14 @@ public class Student {
 
     public void setPoint(int point) {
         this.point = point;
+    }
+
+    public boolean isSubmit() {
+        return submit;
+    }
+
+    public void setSubmit(boolean submit) {
+        this.submit = submit;
     }
 
     @Override
