@@ -33,6 +33,10 @@ public class Student {
         studentData.add(setStudentData);
     }
 
+    public ArrayList<Student> getData() {
+        return studentData;
+    }
+
     public String getName() {
         return name;
     }
@@ -79,5 +83,15 @@ public class Student {
 
     public void setPoint(int point) {
         this.point = point;
+    }
+
+    @Override
+    public String toString() {
+        return "Name: " + name +
+                ", Tel: " + tel +
+                ", NativeSC: " + nativeSC +
+                ", Score: " + score +
+                ", Attendance: " + attendance +
+                ", Point: " + point;
     }
 }
