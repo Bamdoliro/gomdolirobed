@@ -26,4 +26,21 @@ public class School {
             System.out.println(student.toStringPass());
         }
     }
+
+    public static void check(String name) {
+        for (Student student : studentsData) {
+            if (name.equals(student.getName())) {
+                System.out.println("==================================");
+                System.out.println(student.getName() + "의 원서접수 내용");
+                System.out.println("==================================");
+                System.out.println("지원자 이름 : " + student.getName());
+                System.out.println("전화번호 : " + student.getTel());
+                System.out.println("출신 중학교 : " + student.getNativeSC());
+                System.out.println("성적 : " + student.getScore());
+                System.out.println("출결 : " + student.getAttendance());
+                System.out.println("가산점 : " + student.getPoint());
+                System.out.println("지원자의 합격 여부 : " + student.isPass());
+            }
+        }
+    }
 }

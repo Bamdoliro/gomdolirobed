@@ -41,8 +41,8 @@ public class Main {
 
         // TODO-6 자신의 원서 상태 조회
         // 이밤돌 학생이 본인의 원서 상태를 조회합니다.
-
+        bssm.check(leebamdol.getName());
         // 금곰돌 학생이 본인의 원서 상태를 조회합니다.
-
+        bssm.check(geumgomdol.getName());
     }
 }
