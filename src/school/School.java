@@ -8,7 +8,7 @@ public class School {
     static ArrayList<Student> studentsData = new ArrayList<>();
 
     public static void submit(ArrayList<Student> obj) {
-        if (obj != null) studentsData.addAll(obj);
+        if (obj != null) studentsData.addAll(obj); // 데이터가 포함 되어 있으면 저장
     }
 
     public static void search() {
@@ -28,6 +28,7 @@ public class School {
     }
 
     public static void check(String name) {
+        // 이름이 같으면 원서접수 내용 출력
         studentsData.stream()
                 .filter(student -> name.equals(student.getName()))
                 .forEach(student -> {

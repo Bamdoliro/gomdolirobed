@@ -32,15 +32,15 @@ public class Student {
         this.attendance = attendance;
         this.point = point;
         Student setStudentData = new Student(name, tel, nativeSC, score, attendance, point, pass);
-        studentData.add(setStudentData);
+        studentData.add(setStudentData); // studentData에 받은 데이터 저장
     }
 
     public ArrayList<Student> getData() {
-        if (!submit) {
+        if (!submit) { // 제출을 한번도 하지 않았을 경우
             submit = true;
             return studentData;
         }
-        else {
+        else { // 제출을 한번이라도 한 경우 null return
             System.out.println(getName() + "님 이미 제출하였습니다.");
             return null;
         }
@@ -121,6 +121,7 @@ public class Student {
                 ", Point: " + point;
     }
 
+    // 합격 여부 포함 하여 출력
     public String toStringPass() {
         return "Name: " + name +
                 ", Tel: " + tel +
