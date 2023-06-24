@@ -24,6 +24,7 @@ public class Student {
         this.point = point;
     }
 
+    // 학생의 원서 저장
     public void setData(String name, String tel, String nativeSC, int score, int attendance, int point) {
         this.name = name;
         this.tel = tel;
@@ -35,6 +36,7 @@ public class Student {
         studentData.add(setStudentData); // studentData에 받은 데이터 저장
     }
 
+    // 학생 데이터 반환
     public ArrayList<Student> getData() {
         if (!submit) { // 제출을 한번도 하지 않았을 경우
             submit = true;
@@ -44,7 +46,6 @@ public class Student {
             System.out.println(getName() + "님 이미 제출하였습니다.");
             return null;
         }
-
     }
 
     public String getName() {
@@ -121,7 +122,7 @@ public class Student {
                 ", Point: " + point;
     }
 
-    // 합격 여부 포함 하여 출력
+    // 합격 여부 포함하여 출력
     public String toStringPass() {
         return "Name: " + name +
                 ", Tel: " + tel +
