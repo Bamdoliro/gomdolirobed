@@ -121,15 +121,4 @@ public class Student {
                 ", Attendance: " + attendance +
                 ", Point: " + point;
     }
-
-    // 합격 여부 포함하여 출력
-    public String toStringPass() {
-        return "Name: " + name +
-                ", Tel: " + tel +
-                ", NativeSC: " + nativeSC +
-                ", Score: " + score +
-                ", Attendance: " + attendance +
-                ", Point: " + point +
-                ", Pass: " + pass;
-    }
 }
