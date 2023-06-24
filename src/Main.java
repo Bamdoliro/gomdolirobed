@@ -1,4 +1,53 @@
 public class Main {
+
+    static class BSSM {
+        static class Applicant {
+            private String name;
+            private String phoneNumber;
+            private String middleSchool;
+            private int grade;
+            private int attendance;
+            private int addition;
+
+            //          S: API
+            public void setName(String name) {this.name = name;}
+
+            public void setPhoneNumber(String phoneNumber) {this.phoneNumber = phoneNumber;}
+
+            public void setMiddleSchool(String middleSchool) {this.middleSchool = middleSchool;}
+
+            public void setGrade(int grade) {this.grade = grade;}
+
+            public void setAttendance(int attendance) {this.attendance = attendance;}
+
+            public void setAddition(int addition) {this.addition = addition;}
+
+            public void setIntegrated // 통합본
+            (String name, String phoneNumber, String middleSchool, int grade, int attendance, int addition) {
+                this.name = name;
+                this.phoneNumber = phoneNumber;
+                this.middleSchool = middleSchool;
+                this.grade = grade;
+                this.attendance = attendance;
+                this.addition = addition;
+            }
+
+            public String getName() {return name;}
+
+            public String getPhoneNumber() {return phoneNumber;}
+
+            public String getMiddleSchool() {return middleSchool;}
+
+            public int getGrade() {return grade;}
+
+            public int getAttendance() {return attendance;}
+
+            public int getAddition() {return addition;}
+//          E: API
+
+        }
+    }
+
     public static void main(String[] args) {
 
         // TODO-0 데이터 생성
@@ -19,11 +68,11 @@ public class Main {
         // 금곰돌 학생이 부산소프트웨어마이스터고등학교에 낼 원서를 작성합니다.
 
         // 금곰돌 학생이 원서를 제출합니다.
-        
-        
+
+
         // TODO-3 이밤돌 학생 원서 재제출
         // 이밤돌 학생이 부산소프트웨어마이스터고등학교에 낼 원서를 작성합니다.
-        
+
         // 이밤돌 학생이 원서를 제출합니다.
         // 원서는 정상적으로 처리하지 않고, 한 번만 제출할 수 있다는 메시지를 출력합니다.
 
