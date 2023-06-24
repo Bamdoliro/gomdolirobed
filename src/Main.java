@@ -1,3 +1,7 @@
+import java.util.ArrayList;
+import java.util.InputMismatchException;
+import java.util.Scanner;
+
 public class Main {
 
     static class BSSM {
@@ -10,19 +14,7 @@ public class Main {
             private int addition;
 
             //          S: API
-            public void setName(String name) {this.name = name;}
-
-            public void setPhoneNumber(String phoneNumber) {this.phoneNumber = phoneNumber;}
-
-            public void setMiddleSchool(String middleSchool) {this.middleSchool = middleSchool;}
-
-            public void setGrade(int grade) {this.grade = grade;}
-
-            public void setAttendance(int attendance) {this.attendance = attendance;}
-
-            public void setAddition(int addition) {this.addition = addition;}
-
-            public void setIntegrated // 통합본
+            public void Applicant
             (String name, String phoneNumber, String middleSchool, int grade, int attendance, int addition) {
                 this.name = name;
                 this.phoneNumber = phoneNumber;
@@ -72,11 +64,12 @@ public class Main {
 
         // TODO-0 데이터 생성
         // 부산소프트웨어마이스터고등학교를 생성합니다.
-
+        BSSM bssm = new BSSM();
+        BSSM.Applicant applicant = new BSSM.Applicant();
         // 밤돌중학교를 다니고 있는 이밤돌 학생을 생성합니다.
-
+        Leebamdol leebamdol = new Leebamdol();
         // 곰돌중학교를 다니고 있는 금곰돌 학생을 생성합니다.
-
+        Geumgomdol geumgomdol = new Geumgomdol();
 
         // TODO-1 이밤돌 학생 원서
         // 이밤돌 학생이 부산소프트웨어마이스터고등학교에 낼 원서를 작성합니다.
