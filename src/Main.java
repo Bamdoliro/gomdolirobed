@@ -48,6 +48,26 @@ public class Main {
         }
     }
 
+    static class Leebamdol {
+        private final String name = "이밤돌";
+        private final String phoneNumber = "01001100011";
+        private final String middleSchool = "밤돌중학교";
+        private final int grade = 100;
+        private final int attendance = 10;
+        private final int addition = 0;
+
+    }
+
+    static class Geumgomdol {
+        private final String name = "금곰돌";
+        private final String phoneNumber = "01000111011";
+        private final String middleSchool = "금돌중학교";
+        private final int grade = 110;
+        private final int attendance = 18;
+        private final int addition = 4;
+    }
+
+
     public static void main(String[] args) {
 
         // TODO-0 데이터 생성
