@@ -3,11 +3,13 @@ public class Main {
 
         // TODO-0 데이터 생성
         // 부산소프트웨어마이스터고등학교를 생성합니다.
+        School bssm = new School();
 
         // 밤돌중학교를 다니고 있는 이밤돌 학생을 생성합니다.
+        Student leeBamDol = new Student("이밤돌", "010-2468-1357", "밤돌중학교");
 
         // 곰돌중학교를 다니고 있는 금곰돌 학생을 생성합니다.
-
+        Student geumGomDol = new Student("금곰돌", "010-1357-5678", "금돌중학교");
 
         // TODO-1 이밤돌 학생 원서
         // 이밤돌 학생이 부산소프트웨어마이스터고등학교에 낼 원서를 작성합니다.
