@@ -1,9 +1,11 @@
+package Main;
+
 public class Main {
     public static void main(String[] args) {
 
         // TODO-0 데이터 생성
         // 부산소프트웨어마이스터고등학교를 생성합니다.
-        School bssm = new School();
+        School bssm = new School("부산소프트웨어마이스터고등학교");
 
         // 밤돌중학교를 다니고 있는 이밤돌 학생을 생성합니다.
         Student leeBamDol = new Student("이밤돌", "010-2468-1357", "밤돌중학교");
@@ -13,21 +15,24 @@ public class Main {
 
         // TODO-1 이밤돌 학생 원서
         // 이밤돌 학생이 부산소프트웨어마이스터고등학교에 낼 원서를 작성합니다.
-
+        leeBamDol.setApplicationForm('A', 100, 1);
         // 이밤돌 학생이 원서를 제출합니다.
+        leeBamDol.submitApplicationForm();
 
 
         // TODO-2 금곰돌 학생 원서
         // 금곰돌 학생이 부산소프트웨어마이스터고등학교에 낼 원서를 작성합니다.
-
+        geumGomDol.setApplicationForm('C', 70, 0);
         // 금곰돌 학생이 원서를 제출합니다.
+        geumGomDol.submitApplicationForm();
         
         
         // TODO-3 이밤돌 학생 원서 재제출
         // 이밤돌 학생이 부산소프트웨어마이스터고등학교에 낼 원서를 작성합니다.
-        
+        leeBamDol.setApplicationForm('B', 90, 1);
         // 이밤돌 학생이 원서를 제출합니다.
         // 원서는 정상적으로 처리하지 않고, 한 번만 제출할 수 있다는 메시지를 출력합니다.
+        leeBamDol.submitApplicationForm();
 
 
         // TODO-4 원서 조회
@@ -42,6 +47,5 @@ public class Main {
         // 이밤돌 학생이 본인의 원서 상태를 조회합니다.
 
         // 금곰돌 학생이 본인의 원서 상태를 조회합니다.
-
     }
 }
