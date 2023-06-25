@@ -1,4 +1,4 @@
-public class Test {
+public class API_Test {
     static class BSSM {
         static class Applicant {
             private String name;
