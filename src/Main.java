@@ -102,8 +102,8 @@ public class Main {
         private int attendance;
         private int addition;
         private int submitId;
-
-        public void setLeebamdol(String name, String phoneNumber, String middleSchool, int grade, int attendance, int addition) {
+      
+        public void writeApplication(String name, String phoneNumber, String middleSchool, int grade, int attendance, int addition) {
             this.name = name;
             this.phoneNumber = phoneNumber;
             this.middleSchool = middleSchool;
@@ -162,7 +162,7 @@ public class Main {
         private int addition;
         private int submitId;
 
-        public void setGeumgomdol
+        public void writeApplication
                 (String name, String phoneNumber, String middleSchool, int grade, int attendance, int addition) {
             this.name = name;
             this.phoneNumber = phoneNumber;
@@ -228,22 +228,22 @@ public class Main {
 
         // TODO-1 이밤돌 학생 원서
         // 이밤돌 학생이 부산소프트웨어마이스터고등학교에 낼 원서를 작성합니다.
-        leebamdol.setLeebamdol
+
+        leebamdol.writeApplication
                 ("이밤돌", "010-1111-2222", "밤돌중학교", 110, 11, 0);
         // 이밤돌 학생이 원서를 제출합니다.
         leebamdol.submitApplication();
 
-
         // TODO-2 금곰돌 학생 원서
         // 금곰돌 학생이 부산소프트웨어마이스터고등학교에 낼 원서를 작성합니다.
-        geumgomdol.setGeumgomdol
+        geumgomdol.writeApplication
                 ("금곰돌", "010-2222-1111", "금돌중학교", 140, 18, 4);
         // 금곰돌 학생이 원서를 제출합니다.
         geumgomdol.submitApplication();
 
         // TODO-3 이밤돌 학생 원서 재제출
         // 이밤돌 학생이 부산소프트웨어마이스터고등학교에 낼 원서를 작성합니다.
-        leebamdol.setLeebamdol
+        leebamdol.writeApplication
                 ("이밤돌", "010-1111-2222", "밤돌중학교", 110, 11, 4);
         // 이밤돌 학생이 원서를 제출합니다.
         leebamdol.submitApplication();

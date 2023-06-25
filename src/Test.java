@@ -8,6 +8,7 @@ public class Test {
             private int attendance;
             private int addition;
 
+
 //          S: API
             public void setName(String name) {this.name = name;}
 
