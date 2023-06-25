@@ -1,8 +1,103 @@
+import java.util.ArrayList;
+
 public class Main {
+
+    static class BSSM {
+        static class Applicant {
+            private final String name;
+            private final String phoneNumber;
+            private final String middleSchool;
+            private final int grade;
+            private final int attendance;
+            private final int addition;
+            private String status;
+
+            public Applicant(String name, String phoneNumber, String middleSchool, int grade, int attendance, int addition) {
+                this.name = name;
+                this.phoneNumber = phoneNumber;
+                this.middleSchool = middleSchool;
+                this.grade = grade;
+                this.attendance = attendance;
+                this.addition = addition;
+                this.status = "미결정";
+            }
+
+            public String getName() {
+                return name;
+            }
+
+            public String getPhoneNumber() {
+                return phoneNumber;
+            }
+
+            public String getMiddleSchool() {
+                return middleSchool;
+            }
+
+            public int getGrade() {
+                return grade;
+            }
+
+            public int getAttendance() {
+                return attendance;
+            }
+
+            public int getAddition() {
+                return addition;
+            }
+
+            public String getStatus() {
+                return status;
+            }
+
+            public void setStatus(String status) {
+                this.status = status;
+            }
+        }
+
+        private final ArrayList<Applicant> applicantList;
+
+        public BSSM() {
+            applicantList = new ArrayList<>();
+        }
+
+        public void addApplicant
+                (String name, String phoneNumber, String middleSchool, int grade, int attendance, int addition) {
+            Applicant applicant = new Applicant(name, phoneNumber, middleSchool, grade, attendance, addition);
+            applicantList.add(applicant);
+        }
+
+        public void viewApplicant(String name) {
+            for (Applicant applicant : applicantList) {
+                if (applicant.getName().equals(name)) {
+                    System.out.println("이름: " + applicant.getName());
+                    System.out.println("전화번호: " + applicant.getPhoneNumber());
+                    System.out.println("중학교: " + applicant.getMiddleSchool());
+                    System.out.println("성적: " + applicant.getGrade());
+                    System.out.println("출결: " + applicant.getAttendance());
+                    System.out.println("가산점: " + applicant.getAddition());
+                    System.out.println("합격여부: " + applicant.getStatus());
+                    return;
+                }
+            }
+            System.out.println("해당 이름의 지원자를 찾을 수 없습니다.");
+        }
+
+        public void setApplicationStatus(String name, String status) {
+            for (Applicant applicant : applicantList) {
+                if (applicant.getName().equals(name)) {
+                    applicant.setStatus(status);
+                    return;
+                }
+            }
+            System.out.println("해당 이름의 지원자를 찾을 수 없습니다.");
+        }
+    }
     public static void main(String[] args) {
 
         // TODO-0 데이터 생성
         // 부산소프트웨어마이스터고등학교를 생성합니다.
+        BSSM bssm = new BSSM();
 
         // 밤돌중학교를 다니고 있는 이밤돌 학생을 생성합니다.
 
