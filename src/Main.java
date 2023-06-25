@@ -1,4 +1,6 @@
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 
 public class Main {
 
@@ -100,6 +102,23 @@ public class Main {
             submitId++;
             return submitId;
         }
+
+        public void sortApplicantsByGrade() {
+            Collections.sort(applicantList, new Comparator<Applicant>() {
+                public int compare(Applicant applicant1, Applicant applicant2) {
+                    return Integer.compare(applicant1.getGrade(), applicant2.getGrade());
+                }
+            });
+        }
+
+        public void calculateTotalScores() {
+            for (Applicant applicant : applicantList) {
+                int totalScore = applicant.getGrade() + applicant.getAttendance() + applicant.getAddition();
+                System.out.println("이름: " + applicant.getName());
+                System.out.println("총 점수: " + totalScore);
+                System.out.println("====================");
+            }
+        }
     }
 
     static class Leebamdol {
@@ -109,7 +128,7 @@ public class Main {
         private int grade;
         private int attendance;
         private int addition;
-        private int submitId;
+        private int submitId = -1;
 
         public void writeApplication(String name, String phoneNumber, String middleSchool, int grade, int attendance, int addition) {
             this.name = name;
@@ -118,7 +137,6 @@ public class Main {
             this.grade = grade;
             this.attendance = attendance;
             this.addition = addition;
-            this.submitId = -1;
         }
 
         public void submitApplication(BSSM bssm) {
@@ -166,7 +184,7 @@ public class Main {
         private int grade;
         private int attendance;
         private int addition;
-        private int submitId;
+        private int submitId = -1;
 
         public void writeApplication(String name, String phoneNumber, String middleSchool, int grade, int attendance, int addition) {
             this.name = name;
@@ -175,7 +193,6 @@ public class Main {
             this.grade = grade;
             this.attendance = attendance;
             this.addition = addition;
-            this.submitId = -1;
         }
 
         public void submitApplication(BSSM bssm) {
@@ -253,13 +270,15 @@ public class Main {
         leebamdol.submitApplication(bssm);
         // 원서는 정상적으로 처리하지 않고, 한 번만 제출할 수 있다는 메시지를 출력합니다.
 
-        // TODO-4 원서 조회
         // 제출한 모든 원서를 점수 순을 조회합니다.
+        bssm.sortApplicantsByGrade();
+        for (BSSM.Applicant applicant : bssm.applicantList) {
+            System.out.println("이름: " + applicant.getName());
+            System.out.println("성적: " + applicant.getGrade());
+            System.out.println("====================");
+        }
 
-
-        // TODO-5 합불 여부 입력
         // 자유롭게 기준을 세워서 그 기준에 따라 이밤돌 학생은 탈락으로, 금곰돌 학생은 합격으로 처리합니다.
-
 
         // TODO-6 자신의 원서 상태 조회
         // 이밤돌 학생이 본인의 원서 상태를 조회합니다.
