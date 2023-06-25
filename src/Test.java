@@ -8,7 +8,8 @@ public class Test {
             private int attendance;
             private int addition;
 
-            //          S: API
+
+//          S: API
             public void setName(String name) {this.name = name;}
 
             public void setPhoneNumber(String phoneNumber) {this.phoneNumber = phoneNumber;}
@@ -22,7 +23,7 @@ public class Test {
             public void setAddition(int addition) {this.addition = addition;}
 
             public void setIntegrated // 통합본
-            (String name, String phoneNumber, String middleSchool, int grade, int attendance, int addition) {
+                    (String name, String phoneNumber, String middleSchool, int grade, int attendance, int addition) {
                 this.name = name;
                 this.phoneNumber = phoneNumber;
                 this.middleSchool = middleSchool;

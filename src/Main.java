@@ -102,7 +102,7 @@ public class Main {
         private int attendance;
         private int addition;
         private int submitId;
-
+      
         public void writeApplication(String name, String phoneNumber, String middleSchool, int grade, int attendance, int addition) {
             this.name = name;
             this.phoneNumber = phoneNumber;
@@ -228,25 +228,26 @@ public class Main {
 
         // TODO-1 이밤돌 학생 원서
         // 이밤돌 학생이 부산소프트웨어마이스터고등학교에 낼 원서를 작성합니다.
+
         leebamdol.writeApplication
                 ("이밤돌", "010-1111-2222", "밤돌중학교", 110, 11, 0);
         // 이밤돌 학생이 원서를 제출합니다.
-
+        leebamdol.submitApplication();
 
         // TODO-2 금곰돌 학생 원서
         // 금곰돌 학생이 부산소프트웨어마이스터고등학교에 낼 원서를 작성합니다.
         geumgomdol.writeApplication
                 ("금곰돌", "010-2222-1111", "금돌중학교", 140, 18, 4);
         // 금곰돌 학생이 원서를 제출합니다.
-        
-        
+        geumgomdol.submitApplication();
+
         // TODO-3 이밤돌 학생 원서 재제출
         // 이밤돌 학생이 부산소프트웨어마이스터고등학교에 낼 원서를 작성합니다.
         leebamdol.writeApplication
                 ("이밤돌", "010-1111-2222", "밤돌중학교", 110, 11, 4);
         // 이밤돌 학생이 원서를 제출합니다.
+        leebamdol.submitApplication();
         // 원서는 정상적으로 처리하지 않고, 한 번만 제출할 수 있다는 메시지를 출력합니다.
-
 
         // TODO-4 원서 조회
         // 제출한 모든 원서를 점수 순을 조회합니다.
@@ -258,8 +259,8 @@ public class Main {
 
         // TODO-6 자신의 원서 상태 조회
         // 이밤돌 학생이 본인의 원서 상태를 조회합니다.
-
+        bssm.viewApplicant(leebamdol.getName());
         // 금곰돌 학생이 본인의 원서 상태를 조회합니다.
-
+        bssm.viewApplicant(geumgomdol.getName());
     }
 }
