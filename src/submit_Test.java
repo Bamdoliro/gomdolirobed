@@ -12,8 +12,7 @@ public class submit_Test {
             private final int addition;
             private String status;
 
-            public Applicant
-                    (String name, String phoneNumber, String middleSchool, int grade, int attendance, int addition) {
+            public Applicant(String name, String phoneNumber, String middleSchool, int grade, int attendance, int addition) {
                 this.name = name;
                 this.phoneNumber = phoneNumber;
                 this.middleSchool = middleSchool;
@@ -57,20 +56,22 @@ public class submit_Test {
         }
 
         private final ArrayList<Applicant> applicantList;
+        private int submitId;
 
         public BSSM() {
             applicantList = new ArrayList<>();
+            submitId = 0;
         }
 
-        public void addApplicant
-                (String name, String phoneNumber, String middleSchool, int grade, int attendance, int addition) {
+        public void addApplicant(String name, String phoneNumber, String middleSchool, int grade, int attendance, int addition) {
             Applicant applicant = new Applicant(name, phoneNumber, middleSchool, grade, attendance, addition);
             applicantList.add(applicant);
         }
 
-        public void viewApplicant(String name) {
+        public void viewApplicant(String phoneNumber) {
             for (Applicant applicant : applicantList) {
-                if (applicant.getName().equals(name)) {
+                if (applicant.getPhoneNumber().equals(phoneNumber)) {
+                    System.out.println("====================");
                     System.out.println("이름: " + applicant.getName());
                     System.out.println("전화번호: " + applicant.getPhoneNumber());
                     System.out.println("중학교: " + applicant.getMiddleSchool());
@@ -78,15 +79,16 @@ public class submit_Test {
                     System.out.println("출결: " + applicant.getAttendance());
                     System.out.println("가산점: " + applicant.getAddition());
                     System.out.println("합격여부: " + applicant.getStatus());
+                    System.out.println("====================");
                     return;
                 }
             }
             System.out.println("해당 이름의 지원자를 찾을 수 없습니다.");
         }
 
-        public void setApplicationStatus(String name, String status) {
+        public void setApplicationStatus(String phoneNumber, String status) {
             for (Applicant applicant : applicantList) {
-                if (applicant.getName().equals(name)) {
+                if (applicant.getName().equals(phoneNumber)) {
                     applicant.setStatus(status);
                     return;
                 }
@@ -102,28 +104,30 @@ public class submit_Test {
         private int grade;
         private int attendance;
         private int addition;
-        private int submitId;
+        private int submitId = -1;
 
-        public void writeApplication
-                (String name, String phoneNumber, String middleSchool, int grade, int attendance, int addition) {
+        public void writeApplication(String name, String phoneNumber, String middleSchool, int grade, int attendance, int addition) {
             this.name = name;
             this.phoneNumber = phoneNumber;
             this.middleSchool = middleSchool;
             this.grade = grade;
             this.attendance = attendance;
             this.addition = addition;
-            this.submitId = -1;
         }
 
-        public void submitApplication() {
-            if (this.submitId == -1) {
-                BSSM bssm = new BSSM();
-                bssm.addApplicant
-                        (this.name, this.phoneNumber, this.middleSchool, this.grade, this.attendance, this.addition);
-                this.submitId += 1;
-            }else {
+        public void submitApplication(BSSM bssm) {
+            if (this.submitId != 0) {
+                bssm.addApplicant(this.name, this.phoneNumber, this.middleSchool, this.grade, this.attendance, this.addition);
+                this.submitId = 0; // 원서 제출 후 submitId를 0으로 변경합니다.
+            } else {
                 System.out.println("원서는 한 번만 제출할 수 있습니다.");
             }
+        }
+
+
+
+        public void setSubmitId(int submitId) {
+            this.submitId = submitId;
         }
 
         public String getName() {
@@ -164,8 +168,7 @@ public class submit_Test {
         private int addition;
         private int submitId;
 
-        public void writeApplication
-                (String name, String phoneNumber, String middleSchool, int grade, int attendance, int addition) {
+        public void writeApplication(String name, String phoneNumber, String middleSchool, int grade, int attendance, int addition) {
             this.name = name;
             this.phoneNumber = phoneNumber;
             this.middleSchool = middleSchool;
@@ -175,15 +178,18 @@ public class submit_Test {
             this.submitId = -1;
         }
 
-        public void submitApplication() {
+        public void submitApplication(BSSM bssm) {
             if (submitId == -1) {
-                BSSM bssm = new BSSM();
-                bssm.addApplicant
-                        (this.name, this.phoneNumber, this.middleSchool, this.grade, this.attendance, this.addition);
-                this.submitId += 1;
-            }else {
+                setSubmitId(0);
+                bssm.addApplicant(this.name, this.phoneNumber, this.middleSchool, this.grade, this.attendance, this.addition);
+            } else {
                 System.out.println("원서는 한 번만 제출할 수 있습니다.");
             }
+        }
+
+
+        public void setSubmitId(int submitId) {
+            this.submitId = submitId;
         }
 
         public String getName() {
@@ -215,6 +221,7 @@ public class submit_Test {
         }
     }
 
+
     public static void main(String[] args) {
 
         // TODO-0 데이터 생성
@@ -230,28 +237,26 @@ public class submit_Test {
 
         // TODO-1 이밤돌 학생 원서
         // 이밤돌 학생이 부산소프트웨어마이스터고등학교에 낼 원서를 작성합니다.
+
         leebamdol.writeApplication
                 ("이밤돌", "010-1111-2222", "밤돌중학교", 110, 11, 0);
         // 이밤돌 학생이 원서를 제출합니다.
-        leebamdol.submitApplication();
+        leebamdol.submitApplication(bssm);
 
         // TODO-2 금곰돌 학생 원서
         // 금곰돌 학생이 부산소프트웨어마이스터고등학교에 낼 원서를 작성합니다.
         geumgomdol.writeApplication
                 ("금곰돌", "010-2222-1111", "금돌중학교", 140, 18, 4);
         // 금곰돌 학생이 원서를 제출합니다.
-        geumgomdol.submitApplication();
-
+        geumgomdol.submitApplication(bssm);
 
         // TODO-3 이밤돌 학생 원서 재제출
         // 이밤돌 학생이 부산소프트웨어마이스터고등학교에 낼 원서를 작성합니다.
         leebamdol.writeApplication
                 ("이밤돌", "010-1111-2222", "밤돌중학교", 110, 11, 4);
         // 이밤돌 학생이 원서를 제출합니다.
-        System.out.println(leebamdol.getSubmitId());
-        leebamdol.submitApplication();
+        leebamdol.submitApplication(bssm);
         // 원서는 정상적으로 처리하지 않고, 한 번만 제출할 수 있다는 메시지를 출력합니다.
-
 
         // TODO-4 원서 조회
         // 제출한 모든 원서를 점수 순을 조회합니다.
@@ -263,8 +268,8 @@ public class submit_Test {
 
         // TODO-6 자신의 원서 상태 조회
         // 이밤돌 학생이 본인의 원서 상태를 조회합니다.
-
+        bssm.viewApplicant(leebamdol.getPhoneNumber());
         // 금곰돌 학생이 본인의 원서 상태를 조회합니다.
-
+        bssm.viewApplicant(geumgomdol.getPhoneNumber());
     }
 }
