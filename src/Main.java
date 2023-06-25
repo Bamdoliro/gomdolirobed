@@ -153,6 +153,66 @@ public class Main {
         }
     }
 
+    static class Geumgomdol {
+        private String name;
+        private String phoneNumber;
+        private String middleSchool;
+        private int grade;
+        private int attendance;
+        private int addition;
+        private int submitId;
+
+        public void setGeumgomdol
+                (String name, String phoneNumber, String middleSchool, int grade, int attendance, int addition) {
+            this.name = name;
+            this.phoneNumber = phoneNumber;
+            this.middleSchool = middleSchool;
+            this.grade = grade;
+            this.attendance = attendance;
+            this.addition = addition;
+            this.submitId = -1;
+        }
+
+        public void submitApplication() {
+            if (submitId == -1) {
+                BSSM bssm = new BSSM();
+                bssm.addApplicant
+                        (this.name, this.phoneNumber, this.middleSchool, this.grade, this.attendance, this.addition);
+                this.submitId += 1;
+            }else {
+                System.out.println("원서는 한 번만 제출할 수 있습니다.");
+            }
+        }
+
+        public String getName() {
+            return name;
+        }
+
+        public String getPhoneNumber() {
+            return phoneNumber;
+        }
+
+        public String getMiddleSchool() {
+            return middleSchool;
+        }
+
+        public int getGrade() {
+            return grade;
+        }
+
+        public int getAttendance() {
+            return attendance;
+        }
+
+        public int getAddition() {
+            return addition;
+        }
+
+        public int getSubmitId() {
+            return submitId;
+        }
+    }
+
     public static void main(String[] args) {
 
         // TODO-0 데이터 생성
@@ -163,6 +223,7 @@ public class Main {
         Leebamdol leebamdol = new Leebamdol();
 
         // 곰돌중학교를 다니고 있는 금곰돌 학생을 생성합니다.
+        Geumgomdol geumgomdol = new Geumgomdol();
 
 
         // TODO-1 이밤돌 학생 원서
