@@ -103,7 +103,7 @@ public class Main {
         private int addition;
         private int submitId;
 
-        public void setLeebamdol(String name, String phoneNumber, String middleSchool, int grade, int attendance, int addition) {
+        public void writeApplication(String name, String phoneNumber, String middleSchool, int grade, int attendance, int addition) {
             this.name = name;
             this.phoneNumber = phoneNumber;
             this.middleSchool = middleSchool;
@@ -162,7 +162,7 @@ public class Main {
         private int addition;
         private int submitId;
 
-        public void setGeumgomdol
+        public void writeApplication
                 (String name, String phoneNumber, String middleSchool, int grade, int attendance, int addition) {
             this.name = name;
             this.phoneNumber = phoneNumber;
