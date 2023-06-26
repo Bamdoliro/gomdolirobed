@@ -112,12 +112,12 @@ public class Main {
         }
 
         public void sortApplicantsByGrade() {
-            Collections.sort(applicantList, new Comparator<Applicant>() {
-                public int compare(Applicant applicant1, Applicant applicant2) {
-                    return Integer.compare(applicant1.getGrade(), applicant2.getGrade());
-                }
-            });
+            if (applicantList != null) {
+                Collections.sort(applicantList, Comparator.comparingInt(Applicant::getGrade).reversed());
+            }
         }
+
+
 
         public void viewAllApplications() {
             for (BSSM.Applicant applicant : applicantList) {
