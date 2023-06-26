@@ -88,9 +88,18 @@ public class Main {
             System.out.println("해당 이름의 지원자를 찾을 수 없습니다.");
         }
 
-        public void setApplicationStatus(String name, String status) {
+        public void judgmentApplicationStatus(String phoneNumber) {
+            if(calculateTotalScores(phoneNumber) >= 140) {
+                setApplicationStatus(phoneNumber, "합격");
+            }else {
+                setApplicationStatus(phoneNumber, "불합격");
+            }
+
+        }
+
+        public void setApplicationStatus(String phoneNumber, String status) {
             for (Applicant applicant : applicantList) {
-                if (applicant.getName().equals(name)) {
+                if (applicant.getPhoneNumber().equals(phoneNumber)) {
                     applicant.setStatus(status);
                     return;
                 }
@@ -111,13 +120,14 @@ public class Main {
             });
         }
 
-        public void calculateTotalScores() {
+        public int calculateTotalScores(String phoneNumber) {
             for (Applicant applicant : applicantList) {
-                int totalScore = applicant.getGrade() + applicant.getAttendance() + applicant.getAddition();
-                System.out.println("이름: " + applicant.getName());
-                System.out.println("총 점수: " + totalScore);
-                System.out.println("====================");
+                if (applicant.getPhoneNumber().equals(phoneNumber)) {
+                    int totalScore = applicant.getGrade() + applicant.getAttendance() + applicant.getAddition();
+                    return totalScore;
+                }
             }
+            return 0;
         }
     }
 
@@ -271,17 +281,21 @@ public class Main {
         // 원서는 정상적으로 처리하지 않고, 한 번만 제출할 수 있다는 메시지를 출력합니다.
 
         // 제출한 모든 원서를 점수 순을 조회합니다.
+        System.out.println("=====제출한 모든 원서를 점수 순을 조회=====");
         bssm.sortApplicantsByGrade();
         for (BSSM.Applicant applicant : bssm.applicantList) {
-            System.out.println("이름: " + applicant.getName());
-            System.out.println("성적: " + applicant.getGrade());
+            System.out.print("이름: " + applicant.getName());
+            System.out.println(", 성적: " + applicant.getGrade());
             System.out.println("====================");
         }
 
         // 자유롭게 기준을 세워서 그 기준에 따라 이밤돌 학생은 탈락으로, 금곰돌 학생은 합격으로 처리합니다.
+        bssm.judgmentApplicationStatus(leebamdol.phoneNumber);
+        bssm.judgmentApplicationStatus(geumgomdol.phoneNumber);
 
         // TODO-6 자신의 원서 상태 조회
         // 이밤돌 학생이 본인의 원서 상태를 조회합니다.
+        System.out.println("=====본인의 원서 상태를 조회=====");
         bssm.viewApplicant(leebamdol.getName());
         // 금곰돌 학생이 본인의 원서 상태를 조회합니다.
         bssm.viewApplicant(geumgomdol.getName());
