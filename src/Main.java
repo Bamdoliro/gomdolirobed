@@ -162,6 +162,10 @@ public class Main {
             }
         }
 
+        public String getPhoneNumber() {
+            return this.phoneNumber;
+        }
+
         public String getName() {
             return name;
         }
@@ -194,6 +198,10 @@ public class Main {
             } else {
                 System.out.println("원서는 한 번만 제출할 수 있습니다.");
             }
+        }
+
+        public String getPhoneNumber() {
+            return this.phoneNumber;
         }
 
         public String getName() {

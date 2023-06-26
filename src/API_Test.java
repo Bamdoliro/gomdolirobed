@@ -52,7 +52,7 @@ public class API_Test {
 
         BSSM.Applicant applicant = new BSSM.Applicant();
 
-//      S: Test
+//      S: Test.Test
         String name = "강시우";
         String phoneNumber = "010-5357-****";
         String middleSchool = "Gyeongnam middle school";
@@ -141,7 +141,7 @@ public class API_Test {
         }else {
             System.out.println("addition:\t\t ❌");
         }
-//      E: Test
+//      E: Test.Test
 
     }
 }
