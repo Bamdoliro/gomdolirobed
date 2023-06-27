@@ -54,14 +54,9 @@ public class ApplicationForm implements Comparable<ApplicationForm>{ //Applicati
     }
 
     @Override
-    //comparable인터페이스에는 compareTo라는 메서드만 있음.
     public int compareTo(ApplicationForm ApplicationForm){ //객체의 compareTo메서드를 오버라이딩하여 ApplicationForm객체만의 정렬 조건을 재정의
-        //implements로 상속한 인터페이스들은 반드시 구현해야하므로 오버라이딩 함.
         if (ApplicationForm.total < total){ return 1; } //ApplicationForm.total을 기준으로 정렬하도록 함
         else if (ApplicationForm.total > total){ return -1; }
         return 0;
     }
 }
-
-
-//나 주석 좀 개쩌는 듯
