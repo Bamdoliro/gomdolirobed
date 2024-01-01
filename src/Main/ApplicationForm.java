@@ -3,7 +3,7 @@ package Main;
 public class ApplicationForm implements Comparable<ApplicationForm>{ //ApplicationForm의 정렬기준을 바꾸기 위해서 Compareable인터페이스 상속
     private String name, phoneNumber, fromMS;
     private int attendance, plusPoint, total;
-    private int intGrade;
+    private Grade intGrade;
     private boolean pass;
 
     public void write(String name, String phoneNumber, String fromMS, char grade, int attendance, int plusPoint){ //원서를 작성하는 함수
@@ -12,14 +12,8 @@ public class ApplicationForm implements Comparable<ApplicationForm>{ //Applicati
         this.fromMS = fromMS;
         this.attendance = attendance;
         this.plusPoint = plusPoint;
-        switch (grade) { //switch로 문자로 들어온 성적을 숫자로 변환
-            case 'A' -> this.intGrade = 80;
-            case 'B' -> this.intGrade = 70;
-            case 'C' -> this.intGrade = 60;
-            case 'D' -> this.intGrade = 50;
-            case 'E' -> this.intGrade = 40;
-        }
-        this.total = intGrade + (attendance / 10) + (plusPoint * 10);
+        this.intGrade = Grade.valueOf(String.valueOf(grade));
+        this.total = intGrade.getValue() + (attendance / 10) + (plusPoint * 10);
     }
 
     public String getName(){
@@ -35,7 +29,7 @@ public class ApplicationForm implements Comparable<ApplicationForm>{ //Applicati
     }
 
     public int getIntGrade(){
-        return intGrade;
+        return intGrade.getValue();
     }
 
     public int getAttendance(){
