@@ -27,7 +27,7 @@ public class Main {
         // 이밤돌 학생이 부산소프트웨어마이스터고등학교에 낼 원서를 작성합니다.
         leebamdol.setApplicationForm('A', 100, 1);
         // 이밤돌 학생이 원서를 제출합니다.
-        geumgomdol.submitApplicationForm(bssm);
+        leebamdol.submitApplicationForm(bssm);
         // 원서는 정상적으로 처리하지 않고, 한 번만 제출할 수 있다는 메시지를 출력합니다.
 
         // TODO-4 원서 조회
