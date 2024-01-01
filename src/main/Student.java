@@ -1,4 +1,4 @@
-package Main;
+package main;
 
 public class Student {
     private final String name;

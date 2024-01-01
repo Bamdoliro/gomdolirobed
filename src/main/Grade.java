@@ -1,4 +1,4 @@
-package Main;
+package main;
 
 public enum Grade {
     A(90), B(80), C(70), D(60), E(50);
